@@ -27,15 +27,13 @@ function App() {
 
   const getTasks = () => {
     Axios.get("https://mysql2-deploy-heroku.herokuapp.com/tasks").then((response) => {
-      if (response.data.length === 0) {
+      setTaskList(response.data);  
+    if (response.data.length === 0) {
         swal("You do not have any tasks today!", {
           buttons: false,
           timer: 1500,
         });
-      } else {
-        setTaskList(response.data);
       }
-      
     })
   }
 
@@ -75,7 +73,7 @@ function App() {
         <input type="text" placeholder="Enter task"
         onChange={(event) => setTask(event.target.value)}
         />
-        <button className="practice" type="reset" onClick={ addTask }>Add task</button>
+        <button className="practice" onClick={ addTask }>Add task</button>
         <button onClick={ getTasks } className="practice">Show tasks</button>
     </section>
     <section className="task-list">
