@@ -57,11 +57,11 @@ function App() {
       },
     }).then((value) => {
       Axios.put("https://mysql2-deploy-heroku.herokuapp.com/edit", { task: value, id: id});
+      getTasks();
       swal("Task has been updated!", {
         buttons: false,
         timer: 1500,
       });
-      getTasks()
     });
   }
 
