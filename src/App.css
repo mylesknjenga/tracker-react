@@ -1,0 +1,137 @@
+.App {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  letter-spacing: .05em;
+
+}
+
+body {
+  background: #ffecd9;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  border: 3px dashed #000;
+  width: 45%;
+  padding: 0.625rem 0rem;
+  margin: 3.125rem auto;
+  
+}
+
+.task-input {
+  text-align: center;
+}
+
+input {
+  padding: 1rem 1.25rem;
+  margin: 0.5rem 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  width: 25rem;
+  font-size: 1em;
+  
+}
+
+.task-list {
+  width: 100%;
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 3.125rem;
+}
+
+
+
+.btn:hover {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #555555
+}
+
+.card {
+  border: solid 1px black;
+  margin: 0.313rem 0;
+  border: 3px dashed #000;
+  padding: 1.875rem;
+  margin: 0.625rem;
+  border-radius: 4px;
+}
+
+.card h2 {
+  font-size: 1.6rem;
+}
+
+
+.practice {
+  -webkit-appearance: none; 
+  background: -webkit-gradient(to right,#a2ccb6 0%,#fceeb5 50%,#ee786e 100%);
+  background: linear-gradient(to right,#a2ccb6 0%,#fceeb5 50%,#ee786e 100%);
+  background-size: 500%;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1.2em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: .05em;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 0.938rem 2.5rem;
+  margin-left: 0.625rem;
+
+}
+button:hover {
+  animation-name: gradient;
+  -webkit-animation-name: gradient;
+  animation-duration: 2s;
+  -webkit-animation-duration: 2s;
+  animation-iteration-count: 1s;
+  -webkit-animation-iteration-count: 1s;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+}
+  
+    
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%
+  }
+  100% {
+    background-position: 100% 
+  }
+    
+}
+
+/* Extra small devices (phones, 600px and down) */
+/* @media only screen and (max-width: 600px) {...} */
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+/* @media only screen and (min-width: 600px) {...} */
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 400px) {
+  h1 {
+    width: 70%;
+    font-size: 2rem;
+  }
+  .practice {
+    margin-top: 10px;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up)
+@media only screen and (min-width: 992px) {...}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+/* @media only screen and (min-width: 1200px) {...} */ 
