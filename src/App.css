@@ -45,14 +45,6 @@ input {
   margin-top: 3.125rem;
 }
 
-
-
-.btn:hover {
-  background-color: #ffffff;
-  color: #000000;
-  border: 1px solid #555555
-}
-
 .card {
   border: solid 1px black;
   margin: 0.313rem 0;
@@ -67,7 +59,7 @@ input {
 }
 
 
-.practice {
+.btn {
   -webkit-appearance: none; 
   background: -webkit-gradient(to right,#a2ccb6 0%,#fceeb5 50%,#ee786e 100%);
   background: linear-gradient(to right,#a2ccb6 0%,#fceeb5 50%,#ee786e 100%);
@@ -125,7 +117,7 @@ button:hover {
     width: 70%;
     font-size: 2rem;
   }
-  .practice {
+  .btn {
     margin-top: 10px;
   }
 }

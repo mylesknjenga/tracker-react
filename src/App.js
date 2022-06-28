@@ -27,18 +27,20 @@ function App() {
 
   const getTasks = () => {
     Axios.get("https://mysql2-deploy-heroku.herokuapp.com/tasks").then((response) => {
-      setTaskList(response.data);  
-    if (response.data.length === 0) {
+      if (response.data.length === 0) {
         swal("You do not have any tasks today!", {
           buttons: false,
           timer: 1500,
         });
+      } else {
+        setTaskList(response.data);
       }
+      
     })
   }
 
   const deleteTask = (id) => {
-    Axios.delete(`https://mysql2-deploy-heroku.herokuapp.com/delete/${id}`)
+    Axios.delete(`https://mysql2-deploy-heroku.herokuapp.com/${id}`)
     swal("Task has been removed!", {
       buttons: false,
       timer: 1500,
@@ -57,11 +59,11 @@ function App() {
       },
     }).then((value) => {
       Axios.put("https://mysql2-deploy-heroku.herokuapp.com/edit", { task: value, id: id});
-      getTasks();
       swal("Task has been updated!", {
         buttons: false,
         timer: 1500,
       });
+      getTasks()
     });
   }
 
@@ -73,16 +75,16 @@ function App() {
         <input type="text" placeholder="Enter task"
         onChange={(event) => setTask(event.target.value)}
         />
-        <button className="practice" onClick={ addTask }>Add task</button>
-        <button onClick={ getTasks } className="practice">Show tasks</button>
+        <button className="btn" onClick={ addTask }>Add task</button>
+        <button className="btn" onClick={ getTasks }>Show tasks</button>
     </section>
     <section className="task-list">
         {taskList.map((val, key) => {
           return (
           <div key={val.id} className="card">
             <h2>{ val.task }</h2>
-            <button className="practice" onClick={() => deleteTask(val.id)}>Delete</button>
-            <button className="practice" onClick={() => editTask(val.id, val.task)}>Edit</button>
+            <button className="btn" onClick={() => deleteTask(val.id)}>Delete</button>
+            <button className="btn" onClick={() => editTask(val.id, val.task)}>Edit</button>
           </div>
           )
         })}
